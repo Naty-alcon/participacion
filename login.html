@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+    <h2>Iniciar Sesión</h2>
+    {% with mensajes = get_flashed_messages() %}
+      {% if mensajes %}
+        <p style="color:red;">{{ mensajes[0] }}</p>
+      {% endif %}
+    {% endwith %}
+    <form method="POST">
+        Usuario: <input type="text" name="usuario" required><br>
+        Contraseña: <input type="password" name="password" required><br>
+        <button type="submit">Ingresar</button>
+    </form>
+    <a href="{{ url_for('registro') }}">Registrarse</a>
+</body>
+</html>
